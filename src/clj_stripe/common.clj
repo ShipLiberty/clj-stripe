@@ -27,6 +27,11 @@
   execute expects a Stripe authentication token in the context, use the macro with-token to set the token and wrap one or several execute calls."
   :operation)
 
+(defn source
+  [src]
+  "Defines the source token or map of card details, used in creating charges and cards"
+  {"source" src})
+
 (defn address1 
   [addr] 
   "Defines the first line of a credit card address."

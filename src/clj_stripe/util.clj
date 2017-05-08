@@ -45,7 +45,7 @@
   "POSTs a to a url using the provided authentication token and parameters."
   [token url params]
   (try
-    (:body (client/post url {:basic-auth [token] :query-params params :throw-exceptions false :as :json}))
+    (:body (client/post url {:basic-auth [token] :query-params params :throw-exceptions false :as :json :coerce :always}))
     (catch java.lang.Exception e e)))
 
 (defn get-request
